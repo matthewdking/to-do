@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-// const App = () => <h1 className="app"> Hey I&lsquo;m React&lsquo;s setup </h1>;
+import Title from './components/title.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1 className="app"> Hey I&lsquo;m React&lsquo;s setup </h1>
+        <Title />
         <h1>{ this.state.hello }</h1>
       </div>
     );
