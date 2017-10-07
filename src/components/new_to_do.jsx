@@ -1,13 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-// prevent page from reloading .preventDefault
-// get value of input as new todo
-// send new todo to todos array in App state
+class NewToDo extends Component {
+  constructor(props) {
+    super(props);
 
-const NewToDo = () =>
-  <form action="">
-    <input type="text"/>
-    <button>Add</button>
-  </form>;
+    this.state = {
+      term: ''
+    };
+
+    this.formSubmit = this.formSubmit.bind(this);
+  }
+
+  render() {
+    return (
+      <form onSubmit={ this.formSubmit }>
+        <input value={ this.state.term }
+          onChange = {event => this.onInputChange(event.target.value)} />
+        <button type="submit">Add</button>
+      </form>
+    );
+  }
+
+  formSubmit(event) {
+    event.preventDefault();
+    this.props.add(this.state.term);
+    this.setState({ term: '' });
+  }
+
+  onInputChange(term) {
+    this.setState({ term });
+  }
+}
 
 export default NewToDo;

@@ -1,12 +1,18 @@
 import React from 'react';
 
-// take in array of todos
-// create list of todos
+const ToDoList = (props) => {
+  const ToDoItems = props.todos.map((todo, i) => {
+    return (
+      <li key={ i }>{ todo }</li>
+    );
+  });
 
-const ToDoList = () =>
-  <ul>
-    <li>This is a todo</li>
-    <li>This is another todo</li>
-  </ul>;
+
+  return (
+    <ul>
+      { ToDoItems }
+    </ul>
+  );
+};
 
 export default ToDoList;

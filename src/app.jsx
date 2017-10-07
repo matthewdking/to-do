@@ -8,17 +8,24 @@ class App extends Component {
     super(props);
 
     this.state = {
-      term: '',
       todos: []
     };
+
+    this.addToDo = this.addToDo.bind(this);
+  }
+
+  addToDo(newToDo) {
+    const newToDoList = this.state.todos;
+    newToDoList.push(newToDo);
+    this.setState({ todos: newToDoList });
   }
 
   render() {
     return (
       <div>
-        <Title hello={ this.state.term }/>
-        <NewToDo />
-        <ToDoList />
+        <Title />
+        <NewToDo add={ this.addToDo }/>
+        <ToDoList todos={ this.state.todos }/>
       </div>
     );
   }
