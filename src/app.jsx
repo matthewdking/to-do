@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
 import Title from './components/title.jsx';
-import ToDoInput from './components/to_do_input.jsx';
+import NewToDo from './components/new_to_do.jsx';
+import ToDoList from './components/to_do_list.jsx';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      hello: 'hi'
+      term: '',
+      todos: []
     };
   }
 
   render() {
     return (
       <div>
-        <Title />
-        <h1>{ this.state.hello }</h1>
-        <ToDoInput />
+        <Title hello={ this.state.term }/>
+        <NewToDo />
+        <ToDoList />
       </div>
     );
   }
