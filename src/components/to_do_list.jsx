@@ -8,14 +8,22 @@ const ToDoList = (props) => {
   };
 
   const ToDoItems = props.todos.map((todo, i) => (
-    <div key={ i }>
-      <li>{ todo }</li>
-      <button onClick={event => deleteSubmit(event, i) } >Delete</button>
-    </div>
+
+    <li key={ i }>
+      <span className="mdl-list__item-primary-content">
+        { todo }
+      </span>
+      <label className="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" htmlFor="checkbox-2">
+        <input type="checkbox" id="checkbox-2" className="mdl-checkbox__input" />
+      </label>
+      <span className="mdl-list__item-secondary-action">
+        <button className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onClick={event => deleteSubmit(event, i) } >Delete</button>
+      </span>
+    </li>
   ));
 
   return (
-    <ul>
+    <ul className="mdl-list">
       { ToDoItems }
     </ul>
   );
