@@ -12,6 +12,7 @@ class App extends Component {
     };
 
     this.addToDo = this.addToDo.bind(this);
+    this.deleteToDo = this.deleteToDo.bind(this);
   }
 
   addToDo(newToDo) {
@@ -20,12 +21,25 @@ class App extends Component {
     this.setState({ todos: newToDoList });
   }
 
+  deleteToDo(deleteIndex) {
+    const newToDoList = this.state.todos;
+    newToDoList.forEach((todo, i) => {
+      if (i === deleteIndex) {
+        newToDoList.splice(i, 1);
+      }
+    });
+    this.setState({ todos: newToDoList });
+  }
+
   render() {
     return (
       <div>
         <Title />
         <NewToDo add={ this.addToDo }/>
-        <ToDoList todos={ this.state.todos }/>
+        <ToDoList
+          todos={ this.state.todos }
+          deleteToDo={ this.deleteToDo }
+        />
       </div>
     );
   }

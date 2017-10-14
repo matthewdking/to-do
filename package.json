@@ -1,5 +1,5 @@
 {
-  "name": "React To Do App",
+  "name": "React-To-Do-App",
   "version": "1.0.0",
   "description": "",
   "main": "index.jsx",
@@ -28,6 +28,7 @@
     "webpack-node-externals": "^1.6.0"
   },
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   }

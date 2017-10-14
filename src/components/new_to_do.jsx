@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class NewToDo extends Component {
   constructor(props) {
@@ -31,5 +32,9 @@ class NewToDo extends Component {
     this.setState({ term });
   }
 }
+
+NewToDo.propTypes = {
+  add: PropTypes.func
+};
 
 export default NewToDo;
