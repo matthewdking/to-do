@@ -15,9 +15,14 @@ class NewToDo extends Component {
   render() {
     return (
       <form onSubmit={ this.formSubmit }>
-        <input value={ this.state.term }
-          onChange = {event => this.onInputChange(event.target.value)} />
-        <button type="submit">Add</button>
+        <div className="mdl-textfield mdl-js-textfield">
+          <input className="mdl-textfield__input" type="text" id="todoinput" value={ this.state.term }
+            onChange = {event => this.onInputChange(event.target.value)} />
+          <label className="mdl-textfield__label" htmlFor="todoinput">New to do...</label>
+        </div>
+        <button type="submit" className="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect">
+          <i classList="material-icons">+</i>
+        </button>
       </form>
     );
   }

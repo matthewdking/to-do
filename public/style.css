@@ -1,4 +1,13 @@
 .app {
   color: blue;
-  font-family: Helvetica;
+  font-family: Roboto;
+}
+
+.app_container {
+  display: block;
+  margin: 0 auto;
+}
+
+.list_container {
+  width: 60%;
 }
